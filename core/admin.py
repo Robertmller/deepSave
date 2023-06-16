@@ -3,11 +3,15 @@ from core.models import Link
 
 
 class LinkAdmin(admin.ModelAdmin):
-    list_display = ["name", "title"]
+    list_display = ["title", "link", "image",
+                    "category", "description", "isLinkOnline"]
 
-    @admin.display(ordering="name")
-    def link_name(self, obj):
-        return obj.link.name
+    @admin.display(ordering="title")
+    def link_url(self, obj):
+        return obj.link.link
+
+    def link_title(self, obj):
+        return obj.link.title
 
 
 admin.site.register(Link, LinkAdmin)
