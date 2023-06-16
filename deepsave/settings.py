@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'deepsave.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': env('DJANGO_DB_NAME'),
         'USER': env('DJANGO_DB_USER'),
         'HOST': env('DJANGO_DB_HOST'),
