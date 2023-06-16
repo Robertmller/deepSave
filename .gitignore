@@ -4,3 +4,6 @@ env/*
 .vscode
 __pycache__
 .env
+migrations/*
+/migrations/*
+migrations/*
