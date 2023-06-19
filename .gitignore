@@ -4,3 +4,6 @@ env/*
 .vscode
 __pycache__
 .env
+deepsavedb
+media
+__init__*
