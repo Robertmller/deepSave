@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8
+    container_name: deepsavedb
+    environment:
+      - MYSQL_ROOT_PASSWORD=deep@123
+    volumes:
+      - mysql_data:/var/lib/mysql/
+
+  app:
+    build: .
+    container_name: deepsave-app
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+volumes:
+  mysql_data:
